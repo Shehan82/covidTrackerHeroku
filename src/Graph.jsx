@@ -88,7 +88,7 @@ function Graph(props) {
     return (
         <div className="graph__bar">
           
-            <Line data={lData} />
+            <Bar data={lData} />
 
         </div>
     )
