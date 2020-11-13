@@ -10,7 +10,7 @@ function InfoBox(props) {
                     {props.title}
                 </Typography>
 
-                <h2 className="infoBox__cases">{props.cases} <small>today</small></h2>
+                <h2 className="infoBox__cases">{props.cases} <small><br/>today</small></h2>
 
                 <Typography className="infoBox__total" color="textSecondary">
                     {props.total} total

@@ -36,10 +36,10 @@ function App() {
         setTableData(sortedData);
         console.log(data);
       })
-      fetch("https://disease.sh/v3/covid-19/countries/LK")
+      await fetch("https://disease.sh/v3/covid-19/countries/lk?strict=true")
       .then(response => response.json())
       .then((data)=>{
-        
+        console.log(data);
         setCoronaInfo(data);
 
       })
@@ -62,12 +62,12 @@ function App() {
       ? "https://disease.sh/v3/covid-19/historical/all?lastdays=30"
       : `https://disease.sh/v3/covid-19/historical/${countryCode}?lastdays=30`;
 
-    // const link = `https://disease.sh/v3/covid-19/historical/${countryCode}?lastdays=30`;
+    
     setUrl(link);
     const url = 
       countryCode === "WorldWide"
       ? "https://disease.sh/v3/covid-19/all"
-      : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+      : `https://disease.sh/v3/covid-19/countries/${countryCode}?strict=true`;
 
       await fetch(url)
       .then((response)=>response.json())
